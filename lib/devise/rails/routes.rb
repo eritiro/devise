@@ -443,7 +443,7 @@ ERROR
         exclusive = { as: new_as, path: new_path, module: nil }
         exclusive.merge!(options.slice(:constraints, :defaults, :options))
 
-        exclusive.each_pair { |key, value| @scope[key] = value }
+        exclusive.each_pair { |key, value| @scope.frame[key] = value }
         yield
       ensure
         @scope = current_scope
